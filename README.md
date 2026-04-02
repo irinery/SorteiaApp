@@ -34,3 +34,13 @@ python app.py
 ## Observação
 
 A coleta de chat usa dados simulados locais (mock) para operação offline da ferramenta.
+
+## Build de executável para Windows (GitHub Actions)
+
+O repositório possui um workflow em `.github/workflows/windows-build.yml` que gera o arquivo `SorteiaApp.exe` com PyInstaller.
+
+### Como usar
+
+1. Faça push do código para uma branch monitorada (`main`, `master` ou `work`) **ou** execute manualmente via **Actions > Build Windows Executable > Run workflow**.
+2. Ao término do job, baixe o artefato `SorteiaApp-windows`.
+3. Dentro do artefato estará o executável `SorteiaApp.exe`.
