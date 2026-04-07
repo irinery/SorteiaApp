@@ -338,6 +338,8 @@ class SorteiaApp(tk.Tk):
         self.previous_participants = [p.copy() for p in self.participants]
 
     def _set_ready_state_if_possible(self) -> None:
+        if self.state_machine == STATE_DRAW_COMPLETED and self.winner_name:
+            return
         eligible_count = len([p for p in self.participants if p["status"] == "elegível"])
         if eligible_count > 0 and self.chat_var.get().strip():
             self.state_machine = STATE_READY_TO_DRAW
